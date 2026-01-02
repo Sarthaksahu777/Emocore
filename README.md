@@ -118,9 +118,4 @@ Discussions are open.
 Issues are intentionally closed.
 This repository prioritizes correctness over adoption.
 
-Final Note
-EmoCore is a boundary, not a product.
 
-It is allowed to be boring.
-It is allowed to be niche.
-It is allowed to be misunderstood.
