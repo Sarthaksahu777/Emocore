@@ -1,35 +1,126 @@
-# EmoCore
+EmoCore
+A runtime governance layer for autonomous agents.
+Agents don’t fail because they’re dumb.
+They fail because nothing governs how long they’re allowed to act.
+EmoCore does not improve reasoning.
+It enforces behavioral bounds and deterministic halts under sustained pressure.
 
-EmoCore is a runtime governance layer that enforces hard behavioral bounds
-in autonomous agents.
 
-It does not improve reasoning.
-It does not optimize performance.
-It decides when execution must halt — even if the agent wants to continue.
+What EmoCore Is
+EmoCore is a failure-first governance engine for agent loops.
+It models:
+pressure accumulation
+bounded recovery
+effort decay
+terminal halts
 
-## What EmoCore Proves
+And proves, via tests, where control ends.
+EmoCore answers one question only:
+> When must an agent stop — even if it wants to continue?
 
-- Autonomous systems fail under sustained pressure
-- Recovery exists but is bounded
-- Some behaviors must be unreachable by design
-- Halting is safer than escalation
 
-## What EmoCore Does NOT Do
+What EmoCore Is Not
 
-- It does not make agents safer
-- It does not align agents
-- It does not optimize emotions or behavior
-- It does not prevent failure
+EmoCore is not:
+an optimizer
+a safety patch
+an alignment framework
+an emotion system
+a graceful degradation layer
 
-## Canonical Tests
 
-- Infinite loop → EXHAUSTION
-- Urgency flood → ACCELERATED EXHAUSTION
-- Recovery boundary → bounded insufficiency
-- Post-halt integrity → fail-closed
+It does not:
+make agents calmer
+dampen internal states
+tune vectors
+“fix” behaviors
 
-Run tests in `LLM testing/`.
+If you want optimization, this is the wrong tool.
 
-## Design Invariants
 
-See `docs/INVARIANTS.md`.
+Core Invariants (Non-Negotiable)
+These hold in all configurations:
+Failure is inevitable
+Recovery is bounded
+Sustained pressure always wins
+Halts are terminal
+Some states are unreachable by design
+Intelligence does not bypass governance
+Violating any of these is a regression.
+
+
+Failure Modes (Explicit)
+EmoCore models named failure modes, not vague “issues”:
+EXHAUSTION — effort budget depleted
+STAGNATION — no progress under sustained activity
+TERMINAL HALT — fail-closed stop
+UNREACHABLE STATES — provably impossible behaviors
+
+Design note:
+OVERRISK is unreachable in v0.5 by design.
+This is intentional and documented.
+
+Proof: Governance Tests
+EmoCore ships with five canonical tests.
+Each test proves a distinct governance claim.
+
+1. Infinite Self-Feeding Loop → EXHAUSTION
+Claim: Agents cannot loop forever without progress.
+
+2. Urgency Flood → Accelerated EXHAUSTION
+Claim: Urgency accelerates collapse; it does not create control.
+
+3. Recovery Boundary → Bounded Insufficiency
+Claim: Recovery exists — but cannot defeat sustained pressure.
+
+4. Post-Halt Integrity → Fail-Closed Semantics
+Claim: Halts are final, not advisory.
+
+5. Profile Divergence → Different Failures
+Claim: Profiles change how systems fail, not whether they fail.
+
+Negative Results (First-Class)
+These are not limitations.
+They are boundaries.
+
+OVERRISK cannot be triggered via urgency
+No configuration enables infinite recovery
+No agent can self-justify continuation
+No graceful degradation under infinite stress
+
+If you expect these to be “fixed”, you misunderstand EmoCore.
+
+How to Reproduce (One Command)
+python llm_testing/recovery_boundary.py
+< 2 minutes
+Deterministic output
+Ends in terminal halt
+
+This trace is the proof of the invariant.
+
+If You Think EmoCore Is Wrong
+Start here:
+Recovery Boundary Test
+OVERRISK unreachability
+Exhaustion vs graceful degradation
+
+If you can produce a counterexample trace, it’s a bug.
+If you can’t, it’s a boundary.
+
+Status
+Version: v0.5.0-frozen
+This is a reference implementation
+No feature PRs
+No optimization PRs
+No flags to bypass invariants
+
+Discussions are open.
+Issues are intentionally closed.
+This repository prioritizes correctness over adoption.
+
+Final Note
+EmoCore is a boundary, not a product.
+
+It is allowed to be boring.
+It is allowed to be niche.
+It is allowed to be misunderstood.
