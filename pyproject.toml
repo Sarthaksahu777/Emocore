@@ -1,0 +1,46 @@
+# pyproject.toml — packaging metadata for EmoCore
+# Uses setuptools as the build backend (PEP 517/518)
+# Place this file at the repository root.
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "emocore"
+version = "0.5.0"
+description = "A runtime governance layer that enforces hard behavioral bounds in autonomous agents."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Sarthaksahu777" }
+]
+# No runtime dependencies for v0.5.0 — intentionally empty
+dependencies = []
+
+keywords = ["agents", "runtime", "governance", "control", "AI"]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Sarthaksahu777/Emocore"
+"Repository" = "https://github.com/Sarthaksahu777/Emocore"
+"Documentation" = "https://github.com/Sarthaksahu777/Emocore#readme"
+
+# Tell setuptools where to find packages; this repo uses a "src/" layout.
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+# Optional: setuptools_scm writes a version file if you enable it later.
+[tool.setuptools_scm]
+write_to = "src/core/_version.py"
