@@ -2,6 +2,8 @@
 # Builds sdist and wheel, publishes to PyPI, and creates a GitHub Release.
 #
 # Place at: .github/workflows/release.yml
+#
+# IMPORTANT: Add the secret PYPI_API_TOKEN in repo Settings -> Secrets and variables -> Actions.
 
 name: Release
 
