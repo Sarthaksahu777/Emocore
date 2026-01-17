@@ -1,5 +1,8 @@
 # EmoCore
 
+![PyPI version](https://img.shields.io/pypi/v/emocore)
+![License](https://img.shields.io/github/license/Sarthaksahu777/Emocore)
+
 EmoCore is a runtime governor that forces autonomous systems to halt when they stop making progress.
 
 Modern agents can reason, plan, and retry — but they do not know when to stop.
