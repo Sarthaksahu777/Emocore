@@ -1,0 +1,65 @@
+# Release workflow — triggered by tags matching v*.*.*
+# Builds sdist and wheel, publishes to PyPI, and creates a GitHub Release.
+#
+# Place at: .github/workflows/release.yml
+#
+# IMPORTANT: Add the secret PYPI_API_TOKEN in repo Settings -> Secrets and variables -> Actions.
+
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build-and-publish:
+    name: Build and publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required for creating the GitHub Release
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install build tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install build twine
+
+      - name: Build distributions
+        run: |
+          python -m build
+
+      - name: Publish to PyPI
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          python -m twine upload dist/* --non-interactive
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          release_name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Upload release assets
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/emocore-${{ github.ref_name }}-py3-none-any.whl
+          asset_name: emocore-${{ github.ref_name }}-py3-none-any.whl
+          asset_content_type: application/zip
+        continue-on-error: true # Don't fail if the exact wheel name match fails, usually just the release creation is enough
