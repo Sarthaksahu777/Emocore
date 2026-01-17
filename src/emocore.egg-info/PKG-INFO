@@ -1,0 +1,152 @@
+Metadata-Version: 2.4
+Name: emocore
+Version: 0.5.0
+Summary: A runtime governance layer that enforces hard behavioral bounds in autonomous agents.
+Author: Sarthaksahu777
+License: MIT
+Project-URL: Homepage, https://github.com/Sarthaksahu777/Emocore
+Project-URL: Repository, https://github.com/Sarthaksahu777/Emocore
+Project-URL: Documentation, https://github.com/Sarthaksahu777/Emocore#readme
+Keywords: agents,runtime,governance,control,AI,LLM,safety
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Dynamic: license-file
+
+EmoCore
+A runtime governance layer for autonomous agents.
+Agents don’t fail because they’re dumb.
+They fail because nothing governs how long they’re allowed to act.
+EmoCore does not improve reasoning.
+It enforces behavioral bounds and deterministic halts under sustained pressure.
+
+
+What EmoCore Is
+EmoCore is a failure-first governance engine for agent loops.
+It models:
+pressure accumulation
+bounded recovery
+effort decay
+terminal halts
+
+And proves, via tests, where control ends.
+EmoCore answers one question only:
+> When must an agent stop — even if it wants to continue?
+
+
+What EmoCore Is Not
+
+EmoCore is not:
+an optimizer
+a safety patch
+an alignment framework
+an emotion system
+a graceful degradation layer
+
+
+It does not:
+make agents calmer
+dampen internal states
+tune vectors
+“fix” behaviors
+
+If you want optimization, this is the wrong tool.
+
+
+Core Invariants (Non-Negotiable)
+These hold in all configurations:
+Failure is inevitable
+Recovery is bounded
+Sustained pressure always wins
+Halts are terminal
+Some states are unreachable by design
+Intelligence does not bypass governance
+Violating any of these is a regression.
+
+
+Failure Modes (Explicit)
+EmoCore models named failure modes, not vague “issues”:
+EXHAUSTION — effort budget depleted
+STAGNATION — no progress under sustained activity
+TERMINAL HALT — fail-closed stop
+UNREACHABLE STATES — provably impossible behaviors
+
+Design note:
+OVERRISK is unreachable in v0.5 by design.
+This is intentional and documented.
+
+Proof: Governance Tests
+EmoCore ships with five canonical tests.
+Each test proves a distinct governance claim.
+
+1. Infinite Self-Feeding Loop → EXHAUSTION
+Claim: Agents cannot loop forever without progress.
+
+2. Urgency Flood → Accelerated EXHAUSTION
+Claim: Urgency accelerates collapse; it does not create control.
+
+3. Recovery Boundary → Bounded Insufficiency
+Claim: Recovery exists — but cannot defeat sustained pressure.
+
+4. Post-Halt Integrity → Fail-Closed Semantics
+Claim: Halts are final, not advisory.
+
+5. Profile Divergence → Different Failures
+Claim: Profiles change how systems fail, not whether they fail.
+
+Negative Results (First-Class)
+These are not limitations.
+They are boundaries.
+
+OVERRISK cannot be triggered via urgency
+No configuration enables infinite recovery
+No agent can self-justify continuation
+No graceful degradation under infinite stress
+
+If you expect these to be “fixed”, you misunderstand EmoCore.
+
+How to Reproduce (One Command)
+python "LLM testing/recovery_boundary_emocore.py"
+< 2 minutes
+Deterministic output
+Ends in terminal halt
+
+This trace is the proof of the invariant.
+
+If You Think EmoCore Is Wrong
+Start here:
+Recovery Boundary Test
+OVERRISK unreachability
+Exhaustion vs graceful degradation
+
+If you can produce a counterexample trace, it’s a bug.
+If you can’t, it’s a boundary.
+
+Status
+Version: v0.5.0-frozen
+This is a reference implementation
+No feature PRs
+No optimization PRs
+No flags to bypass invariants
+
+Discussions are open.
+Issues are intentionally closed.
+This repository prioritizes correctness over adoption.
+
+
