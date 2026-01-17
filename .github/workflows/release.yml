@@ -2,8 +2,6 @@
 # Builds sdist and wheel, publishes to PyPI, and creates a GitHub Release.
 #
 # Place at: .github/workflows/release.yml
-#
-# IMPORTANT: Add the secret PYPI_API_TOKEN in repo Settings -> Secrets and variables -> Actions.
 
 name: Release
 
@@ -42,6 +40,7 @@ jobs:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: |
+          # The --skip-existing flag is the magic fix! 
           python -m twine upload dist/* --non-interactive --skip-existing
 
       - name: Create or Update GitHub Release
