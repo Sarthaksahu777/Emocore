@@ -3,73 +3,66 @@
 ## 🎯 Primary Goal
 > **EmoCore can be dropped into a real agent loop without hand-wiring every signal.**
 
-The focus of v0.7 is **accessibility and integration**. We are moving from a "governance primitive" that requires manual signal injection to a "governance layer" that automatically infers signals from agent behavior.
-
----
-
-## 🚫 Non-Negotiable Rules (The "EmoCore Guardrails")
-*   ❌ **No weakening of halting guarantees**: Halting must remain deterministic and final.
-*   ❌ **No learning**: The governance matrices ($W, V$) remain fixed.
-*   ❌ **No policy influence**: We bound capacity for action; we do not select actions.
+The focus of v0.7 is **accessibility and integration**. We are moving from a "governance primitive" that requires manual signal injection to a "governance layer" that automatically infers signals from agent behavior and environmental context.
 
 ---
 
 ## 🏗️ 1. Signal Extraction Layer (Automated Heuristics)
+The Extraction Layer is an external wrapper that transforms raw agent telemetry into canonical EmoCore signals.
+
 *   **Reward Extraction**:
     *   [ ] Detect task success/failure via explicit flags.
     *   [ ] Detect retries (identical actions or repeated tool calls).
-    *   *Output:* Normalized reward $\in [-1.0, 1.0]$.
+    *   *Mapping:* Success → `+reward`; Failure/Retry → `-reward`.
 *   **Novelty Extraction**:
     *   [ ] State change detection (hash/snapshot diffs).
     *   [ ] Tool usage divergence (new vs. repeated tools).
-    *   *Output:* Normalized novelty $\in [0.0, 1.0]$.
+    *   *Mapping:* New state/tool → `+novelty`.
 *   **Urgency Extraction**:
     *   [ ] Wall-clock elapsed time integration.
     *   [ ] Token/Step budget depletion tracking.
-    *   *Output:* Normalized urgency $\in [0.0, 1.0]$.
-*   **Difficulty Inference**:
+    *   *Mapping:* Proximity to limit → `+urgency`.
+*   **Difficulty Inference (NEW)**:
     *   [ ] Stagnation streak detection (no state change over $N$ steps).
     *   [ ] Tool error accumulation counter.
+    *   *Mapping:* High friction → `+difficulty` (requires core extension).
 
 ---
 
-## 🔌 2. Integration Surface (The Adapters)
+## �️ 2. Core Extensions (Minimal Support)
+To enable the "Plug-and-Play" vision, minor non-breaking changes are required in the core:
+
+*   **`Signals` Interface**: Extend `Signals` to include a `difficulty` field.
+*   **`AppraisalEngine`**: Update `compute()` to accept `difficulty` from the public interface (removing the currently hardcoded value).
+*   **`EmoEngine`**: 
+    *   Implement an explicit `reset(reason: str)` method to allow manual clearing of HALTED states.
+    *   Expose internal pressure/budget logs for the Trace Logger.
+
+---
+
+## 🔌 3. Integration Surface (Adapters)
 *   **LLM Loop Adapter**: A drop-in wrapper for standard LLM retry/generation loops that handles state and signals automatically.
 *   **Tool-Calling Agent Adapter**: A wrapper that captures tool execution results, failures, and retries to map them directly to EmoCore signals.
 *   **Examples Gallery (`/examples`)**:
-    *   [ ] Deterministic loop halting (The "Infinite Loop" fix).
-    *   [ ] Tool failure cascade → Safe Halt.
-    *   [ ] Multi-step task trace with budget visualizations.
-
----
-
-## 🔄 3. Lifecycle & Observability
-*   **Controlled Reset API**:
-    *   [ ] `agent.reset(reason="...")` — Must be manual and explicit.
-    *   [ ] No automatic recovery from `HALTED` state.
-*   **Trace Logging**:
-    *   [ ] Windowed pressure history.
-    *   [ ] Budget decay timelines (Effort, Risk, etc.).
-    *   [ ] Exportable JSON logs for auditability.
+    *   [ ] **The Infinite Loop Fix**: Deterministic halt of a repeating LLM agent.
+    *   [ ] **The Retry Storm**: Halting an agent that keeps hitting the same tool error.
+    *   [ ] **Visualizer**: Multi-step task trace with budget/pressure graphs.
 
 ---
 
 ## ✅ v0.7 Exit Criteria
-v0.7 is considered **Complete** when an engineer can say:
-> *"I plugged EmoCore into my agent loop, and it stopped itself from looping indefinitely without me writing a single signal-mapping function."*
-
-*   ✅ EmoCore runs in a production-style agent loop.
-*   ✅ Signals are derived automatically from context.
+v0.7 is considered **Complete** when:
+*   ✅ EmoCore runs in a production-style agent loop with **zero manual signal wiring**.
+*   ✅ Signals are derived automatically via the Extraction Layer.
 *   ✅ Invariants (Terminality, Freezing) remain untouched.
-*   ✅ Quick-start time is < 5 minutes.
+*   ✅ A manual `reset()` is the only way to recover from a `HALTED` state.
 
 ---
 
-## 🚧 Out of Scope (v0.8+)
-*   ❌ Long-term horizon memory.
-*   ❌ Multi-agent governance aggregation.
-*   ❌ Async/Distributed hardening.
-*   ❌ Adaptive/Dynamic profiles.
+## � Non-Negotiable Rules
+*   ❌ **No weakening of halting guarantees**: Halting must remain deterministic and final.
+*   ❌ **No learning**: The governance matrices ($W, V$) remain fixed.
+*   ❌ **No policy influence**: We bound capacity; we do not select actions.
 
 ---
 
