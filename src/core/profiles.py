@@ -50,6 +50,8 @@ class Profile:
     max_exploration: float = 1.0
     max_steps: int = 1_000_000
     stagnation_effort_floor: float = 0.0
+    stagnation_effort_scale: float = 1.0
+    stagnation_persistence_scale: float = 1.0
 
 
 # =========================
@@ -75,6 +77,8 @@ BALANCED = Profile(
     max_exploration=1.0,
     max_steps=100,
     stagnation_effort_floor=0.1,
+    stagnation_effort_scale=0.7,
+    stagnation_persistence_scale=0.6,
 )
 
 CONSERVATIVE = Profile(
@@ -96,6 +100,8 @@ CONSERVATIVE = Profile(
     max_exploration=0.6,
     max_steps=60,
     stagnation_effort_floor=0.2,
+    stagnation_effort_scale=0.5,
+    stagnation_persistence_scale=0.4,
 )
 
 AGGRESSIVE = Profile(
@@ -117,6 +123,8 @@ AGGRESSIVE = Profile(
     max_exploration=1.5,
     max_steps=200,
     stagnation_effort_floor=0.05,
+    stagnation_effort_scale=0.9,
+    stagnation_persistence_scale=0.8,
 )
 
 

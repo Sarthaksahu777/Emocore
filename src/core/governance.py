@@ -97,9 +97,9 @@ class GovernanceEngine:
         # Let's do it on 'g' to keep matrix operations together, or keep it explicit?
         # User said: "Stagnation handling... Governance starts reacting to stagnating".
         # Let's apply it to 'g' indices corresponding to Effort(0) and Persistence(3).
-        if stagnating:
-            g[0] *= 0.7 # Effort
-            g[3] *= 0.6 # Persistence
+        if stagnating and self.profile:
+            g[0] *= self.profile.stagnation_effort_scale
+            g[3] *= self.profile.stagnation_persistence_scale
 
         # 2. Profile Scaling
         if self.profile:
