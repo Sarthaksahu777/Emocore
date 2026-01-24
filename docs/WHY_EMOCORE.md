@@ -13,7 +13,7 @@ Traditional architectures conflate *action selection* (Policy) with *agency regu
 - **Policy Layer**: Responsible for **what** action to take (evaluated by reward).
 - **Governance Layer**: Responsible for **if** an action is permitted and at what **intensity**.
 
-Attempting to encode governance concerns (persistence, risk, halting) into reward functions results in unstable incentives and delayed feedback. EmoCore externalizes these into a deterministic runtime primitive.
+Attempting to encode governance concerns (persistence, risk, halting) into reward functions results in unstable incentives and delayed feedback. EmoCore externalizes these into a deterministic runtime governor.
 
 ## Safety Through Enforcement
 In non-stationary or adversarial environments, safety and progress invariants cannot be reliably learned; they must be enforced. EmoCore provides a **fail-closed** mechanism ensuring:
@@ -22,7 +22,7 @@ In non-stationary or adversarial environments, safety and progress invariants ca
 3. **Auditability**: Transparent state transitions that are easily monitored.
 
 ## System Value
-EmoCore transforms autonomous agents from "research toys" into "reliable primitives" by providing **bounded agency** and **explicit failure semantics**. It acting as a safety-critical regulator, ensuring the system remains within its defined behavioral envelope regardless of the complexity of the intelligence layer.
+EmoCore transforms autonomous agents from "experimental systems" into "reliable primitives" by providing **bounded agency** and **explicit failure semantics**. It acting as a safety-critical regulator, ensuring the system remains within its defined behavioral envelope regardless of the complexity of the intelligence layer.
 
 ---
 *Last Updated: Dec 15, 2025*

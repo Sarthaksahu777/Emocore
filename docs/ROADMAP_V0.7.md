@@ -3,7 +3,7 @@
 ## 🎯 Primary Goal
 > **EmoCore can be dropped into a real agent loop without hand-wiring every signal.**
 
-The focus of v0.7 is **accessibility and integration**. We are moving from a "governance primitive" that requires manual signal injection to a "governance layer" that automatically infers signals from agent behavior and environmental context.
+The focus of v0.7 is **accessibility and integration**. We are moving from a "governance engine" that requires manual signal injection to a "governance layer" that automatically infers signals from agent behavior and environmental context.
 
 ---
 

@@ -31,7 +31,7 @@ EmoCore operates independently of:
 5. **Terminal Failure**: Once a failure threshold is crossed (e.g., EXHAUSTION, OVERRISK), the system enters a non-recoverable `HALTED` mode.
 
 ## Specification Context
-As a **first-class runtime primitive**, EmoCore prevents runaway behaviors and ensures agents operate within defined technical safety and progress envelopes, making autonomous systems predictable and reliable.
+As a **first-class runtime governor**, EmoCore prevents runaway behaviors and ensures agents operate within defined technical safety and progress envelopes, making autonomous systems predictable and reliable.
 
 ---
 *Last Updated: Dec 15, 2025*

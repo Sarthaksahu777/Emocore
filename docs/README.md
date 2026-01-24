@@ -1,6 +1,6 @@
 # EmoCore v0.7 — Runtime Governance for Autonomous Systems
 
-EmoCore is a deterministic **runtime governance primitive** designed to regulate the agency of autonomous systems. It decouples *behavioral regulation* (how much permission to act) from *behavioral selection* (what actions to take), providing a fail-closed safety layer for high-autonomy agents.
+EmoCore is a deterministic **runtime governance engine** designed to regulate the agency of autonomous systems. It decouples *behavioral regulation* (how much permission to act) from *behavioral selection* (what actions to take), providing a fail-closed safety layer for high-autonomy agents.
 
 ## Core Value Proposition
 
@@ -54,15 +54,15 @@ while True:
 
 ## Documentation Suite
 
-- [**Technical Definition**](file:///d:/EMOCORE/v0.7/docs/DEFINITION.md) — Core properties and fundamental logic.
-- [**Architecture & Lifecycle**](file:///d:/EMOCORE/v0.7/docs/ARCHITECTURE.md) — Component responsibilities and terminality invariants.
-- [**Failure Modes**](file:///d:/EMOCORE/v0.7/docs/FAILURE_MODES.md) — Specification of `EXHAUSTION`, `OVERRISK`, and `STAGNATION` conditions.
-- [**Why EmoCore?**](file:///d:/EMOCORE/v0.7/docs/WHY_EMOCORE.md) — The engineering problem statement and motivation.
-- [**Terminology**](file:///d:/EMOCORE/v0.7/docs/TERMINOLOGY.md) — Definitive meanings for data primitives and system states.
+- [**Technical Definition**](DEFINITION.md) — Core properties and fundamental logic.
+- [**Architecture & Lifecycle**](ARCHITECTURE.md) — Component responsibilities and terminality invariants.
+- [**Failure Modes**](FAILURE_MODES.md) — Specification of `EXHAUSTION`, `OVERRISK`, and `STAGNATION` conditions.
+- [**Why EmoCore?**](WHY_EMOCORE.md) — The engineering problem statement and motivation.
+- [**Terminology**](TERMINOLOGY.md) — Definitive meanings for data primitives and system states.
 
 ---
 > [!IMPORTANT]
-> EmoCore v0.7 is a **runtime primitive**. It does not perform learning or reasoning. It enforces the behavioral boundaries within which reasoning occurs.
+> EmoCore v0.7 is a **runtime governor**. It does not perform learning or reasoning. It enforces the behavioral boundaries within which reasoning occurs.
 
 ---
 *Last Updated: Dec 15, 2025*
