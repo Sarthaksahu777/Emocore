@@ -5,19 +5,17 @@ import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from core.agent import EmoCoreAgent
+from core.observation import Observation
+from core.extractor import SignalExtractor, RuleBasedExtractor
+from core.validator import SignalValidator
 from core.guarantees import (
-    StepResult,
     GuaranteeEnforcer,
+    StepResult,
 )
+from core.signals import Signals
 from core.failures import FailureType
 from core.modes import Mode
 
-
-@dataclass(frozen=True)
-class Signals:
-    reward: float
-    novelty: float = 0.0
-    urgency: float = 0.0
 
 
 def step(agent: EmoCoreAgent, signals: Signals) -> StepResult:
@@ -30,6 +28,8 @@ def step(agent: EmoCoreAgent, signals: Signals) -> StepResult:
         reward=signals.reward,
         novelty=signals.novelty,
         urgency=signals.urgency,
+        difficulty=signals.difficulty,
+        trust=signals.trust,
     )
 
     # EngineResult → StepResult
@@ -40,7 +40,51 @@ def step(agent: EmoCoreAgent, signals: Signals) -> StepResult:
         failure=res.failure,
         reason=res.reason,
         mode=res.mode,
+        pressure_log=res.pressure_log,  # Pass through from engine
     )
 
     # Enforce guarantees (clamp, override if halted)
     return GuaranteeEnforcer().enforce(result)
+
+
+def observe(
+    agent: EmoCoreAgent, 
+    observation: Observation,
+    extractor: SignalExtractor | None = None,
+    validator: SignalValidator | None = None
+) -> StepResult:
+    """
+    Primary API for Signal Specification v0.x (Path B).
+    
+    Ingests observable behavior (Observation), extracts signals using
+    an Extractor (default: RuleBased), validates them, and executes
+    deterministic governance.
+    
+    Args:
+        agent: The EmoCore agent instance.
+        observation: The behavioral evidence via an Adapter.
+        extractor: Optional custom extractor. Defaults to RuleBasedExtractor.
+        validator: Optional custom validator. Defaults to SignalValidator(strict=False).
+        
+    Returns:
+        StepResult: The governance decision (halted, mode, etc.)
+    """
+    # 1. Select Extractor (maintain state across calls)
+    if extractor is None:
+        if not hasattr(agent, '_extractor'):
+            agent._extractor = RuleBasedExtractor()
+        extractor = agent._extractor
+
+    # 2. Extract Signals (Heuristic Layer)
+    signals = extractor.extract(observation)
+    
+    # 3. Validate Signals (Deterministic Layer)
+    if validator is None:
+        if not hasattr(agent, '_validator'):
+            agent._validator = SignalValidator(strict=False)
+        validator = agent._validator
+    
+    signals = validator.validate(signals)
+    
+    # 4. Governance (Deterministic Layer)
+    return step(agent, signals)

@@ -52,7 +52,7 @@ class AppraisalEngine:
         }
         return deltas
 
-    def compute(self, reward: float, novelty: float, urgency: float) -> PressureState:
+    def compute(self, reward: float, novelty: float, urgency: float, difficulty: float = 0.1) -> PressureState:
         """
         Compute pressure delta from engine signals.
         
@@ -64,7 +64,7 @@ class AppraisalEngine:
             "progress": reward,  # Mapping reward to progress
             "novelty": novelty,
             "urgency": urgency,
-            "difficulty": 0.1, # Default difficulty
+            "difficulty": difficulty,
         }
         deltas = self.appraise(stimulus)
         return PressureState(

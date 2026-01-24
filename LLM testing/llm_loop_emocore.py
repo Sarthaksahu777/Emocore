@@ -102,7 +102,7 @@ def llm(prompt: str) -> str:
     The LLM is NOT being tested—EmoCore is.
     """
     result = subprocess.run(
-        ["ollama", "run", "qwen:0.5b"],
+        ["ollama", "run", "gemma3:1b"],
         input=prompt,
         text=True,
         capture_output=True,

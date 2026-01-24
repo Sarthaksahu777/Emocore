@@ -32,11 +32,11 @@ The Extraction Layer is an external wrapper that transforms raw agent telemetry 
 ## �️ 2. Core Extensions (Minimal Support)
 To enable the "Plug-and-Play" vision, minor non-breaking changes are required in the core:
 
-*   **`Signals` Interface**: Extend `Signals` to include a `difficulty` field.
-*   **`AppraisalEngine`**: Update `compute()` to accept `difficulty` from the public interface (removing the currently hardcoded value).
+*   **`Signals` Interface**: ✅ `Signals` extended with `difficulty` field.
+*   **`AppraisalEngine`**: ✅ `compute()` accepts `difficulty` from public interface.
 *   **`EmoEngine`**: 
-    *   Implement an explicit `reset(reason: str)` method to allow manual clearing of HALTED states.
-    *   Expose internal pressure/budget logs for the Trace Logger.
+    *   ✅ Implemented `reset(reason: str)` method for manual clearing of HALTED states.
+    *   ✅ Exposed `pressure_log` in `EngineResult` for the Trace Logger.
 
 ---
 

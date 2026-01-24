@@ -68,7 +68,15 @@ class EmoEngine:
         # Used to bound recovery (effort/persistence cannot exceed pre-failure levels)
         self._stable_budget = self.budget
 
-    def step(self, reward: float, novelty: float, urgency: float) -> EngineResult:
+    def step(
+        self, 
+        reward: float, 
+        novelty: float, 
+        urgency: float, 
+        difficulty: float = 0.0,
+        trust: float = 1.0,
+        dt: float = 1.0
+    ) -> EngineResult:
         """
         Execute one step of the emotional engine.
         
@@ -87,6 +95,9 @@ class EmoEngine:
             reward: Reward signal from the environment
             novelty: Novelty signal indicating new information
             urgency: Urgency signal indicating time pressure
+            difficulty: Evidence of control loss [0, 1]
+            trust: Credibility of inputs [0, 1]
+            dt: Time delta for processing temporal effects
             
         Returns:
             EngineResult containing current state, budget, mode, and failure info
@@ -129,6 +140,7 @@ class EmoEngine:
             reward=reward,
             novelty=novelty,
             urgency=urgency,
+            difficulty=difficulty,
         )
         self.state = self.state.integrate(delta)
 
@@ -273,4 +285,59 @@ class EmoEngine:
             failure=self._failure,
             reason=self._reason,
             mode=mode,
+            pressure_log={
+                "confidence": self.state.confidence,
+                "frustration": self.state.frustration,
+                "curiosity": self.state.curiosity,
+                "arousal": self.state.arousal,
+                "risk": self.state.risk,
+                "trust": trust,  # First-class observability
+            },
         )
+
+    # Minimum steps before reset is allowed (anti-spam)
+    RESET_COOLDOWN_STEPS = 5
+    
+    def reset(self, reason: str) -> None:
+        """
+        Manually reset the engine from a HALTED state.
+        
+        This is the ONLY way to recover from a halt. It should be used
+        sparingly, typically after human intervention or a major context switch.
+        
+        Anti-Abuse: Reset requires at least RESET_COOLDOWN_STEPS steps to have
+        occurred (unless the engine is halted, in which case reset is always allowed).
+        
+        Args:
+            reason: Explanation for why the reset is occurring (audit trail).
+            
+        Raises:
+            RuntimeError: If reset is called before cooldown period.
+        """
+        # Anti-spam: Require minimum steps before reset (unless halted)
+        if not self._halted and self.step_count < self.RESET_COOLDOWN_STEPS:
+            raise RuntimeError(
+                f"Reset blocked: Only {self.step_count} steps elapsed. "
+                f"Minimum {self.RESET_COOLDOWN_STEPS} required (or engine must be halted)."
+            )
+            
+        self._halted = False
+        self._failure = FailureType.NONE
+        self._reason = None
+        
+        # Reset step count for cooldown tracking
+        self.step_count = 0
+        
+        # Reset budget to IDLE state (full capacity)
+        self.budget = BehaviorBudget(
+            effort=1.0,
+            risk=0.0,
+            persistence=1.0,
+            exploration=0.0
+        )
+        self._previous_budget = self.budget
+        self._stable_budget = self.budget
+        
+        # We generally do NOT reset accumulated pressure state (self.state)
+        # because the emotional context should persist. The 'reset' gives
+        # the agent a fresh budget to DEAL with that pressure, not a lobotomy.

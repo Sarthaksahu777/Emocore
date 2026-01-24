@@ -18,7 +18,7 @@ import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from dataclasses import dataclass
-from typing import Mapping
+from typing import Mapping, Optional, Dict
 from core.behavior import BehaviorBudget
 from core.modes import Mode
 from core.failures import FailureType
@@ -43,6 +43,7 @@ class StepResult:
     failure: FailureType
     reason: str | None
     mode: Mode
+    pressure_log: Optional[Dict[str, float]] = None  # Observability for debugging
 
 
 class GuaranteeEnforcer:
@@ -78,6 +79,7 @@ class GuaranteeEnforcer:
                 failure=result.failure,  # Preserved
                 reason=result.reason,     # Preserved (may be None, that's OK)
                 mode=Mode.HALTED,         # INVARIANT: halted => HALTED
+                pressure_log=result.pressure_log,  # Preserved
             )
 
         # Not halted: clamp budget only, preserve ALL other fields
@@ -88,4 +90,5 @@ class GuaranteeEnforcer:
             failure=result.failure,  # Preserved (not erased to NONE)
             reason=result.reason,    # Preserved (not erased to None)
             mode=result.mode,        # Preserved (not overridden)
+            pressure_log=result.pressure_log,  # Preserved
         )

@@ -10,5 +10,9 @@ class EmoCoreAgent:
     def __init__(self, profile: Profile = PROFILES[ProfileType.BALANCED]):
         self.engine = EmoEngine(profile)
 
-    def step(self, reward: float, novelty: float, urgency: float):
-        return self.engine.step(reward, novelty, urgency)
+    def step(self, reward: float, novelty: float, urgency: float, difficulty: float = 0.0, trust: float = 1.0):
+        return self.engine.step(reward, novelty, urgency, difficulty, trust)
+
+    def reset(self, reason: str) -> None:
+        """Reset the agent from a HALTED state. See EmoEngine.reset for semantics."""
+        self.engine.reset(reason)

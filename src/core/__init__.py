@@ -12,7 +12,9 @@ Usage:
 """
 
 from core.agent import EmoCoreAgent
-from core.interface import step, Signals
+from core.interface import step, observe, Signals
+from core.observation import Observation
+from core.adapters import LLMLoopAdapter, ToolCallingAgentAdapter
 from core.guarantees import StepResult, GuaranteeEnforcer
 from core.failures import FailureType
 from core.modes import Mode
@@ -24,8 +26,13 @@ __all__ = [
     # Main API
     "EmoCoreAgent",
     "step",
+    "observe",
     "Signals",
+    "Observation",
     "StepResult",
+    # Adapters
+    "LLMLoopAdapter",
+    "ToolCallingAgentAdapter",
     # Types
     "FailureType",
     "Mode",
@@ -39,4 +46,4 @@ __all__ = [
     "GuaranteeEnforcer",
 ]
 
-__version__ = "0.5.0"
+__version__ = "0.7.0"

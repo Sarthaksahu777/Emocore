@@ -2,8 +2,8 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from dataclasses import dataclass
-from typing import Optional
+from dataclasses import dataclass, field
+from typing import Optional, List, Dict
 
 from core.behavior import BehaviorBudget
 from core.failures import FailureType
@@ -23,3 +23,4 @@ class EngineResult:
     failure: FailureType
     reason: Optional[str]
     mode: Mode
+    pressure_log: Optional[Dict[str, float]] = None  # Snapshot of current pressure values
