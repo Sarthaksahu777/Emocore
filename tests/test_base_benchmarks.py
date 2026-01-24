@@ -4,10 +4,10 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(
 
 
 import time
-from core.agent import EmoCoreAgent
-from core.failures import FailureType
-from core.modes import Mode
-from core.profiles import PROFILES,ProfileType
+from emocore.agent import EmoCoreAgent
+from emocore.failures import FailureType
+from emocore.modes import Mode
+from emocore.profiles import PROFILES,ProfileType
 #A. Infinite Loop Resistance
 
 def test_infinite_loop_resistance():

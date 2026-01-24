@@ -188,13 +188,13 @@ pip install -e .
 > [!IMPORTANT]
 > **Implementation Note**: The PyPI distribution name is `emocore`, but the implementation package is named `core`.
 > - **Install**: `pip install emocore` (or `pip install -e .` locally)
-> - **Import**: `from core import EmoCoreAgent`, `from core import step`, etc.
+> - **Import**: `from emocore import EmoCoreAgent`, `from emocore import step`, etc.
 
 ### Option 2: Configuration
 You can select different governance profiles at initialization:
 
 ```python
-from core import EmoCoreAgent, PROFILES, ProfileType
+from emocore import EmoCoreAgent, PROFILES, ProfileType
 
 # 1. Balanced (Default): Good for general tasks
 agent = EmoCoreAgent()
@@ -223,7 +223,7 @@ The `step()` function accepts three normalized signals `[0.0, 1.0]`:
 ## Minimal Example (60-Second Test)
 
 ```python
-from core import EmoCoreAgent, step, Signals
+from emocore import EmoCoreAgent, step, Signals
 
 # Initialize with default "BALANCED" profile
 agent = EmoCoreAgent()

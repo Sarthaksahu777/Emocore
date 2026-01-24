@@ -2,9 +2,9 @@ import os
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src'))
 import pytest
-from core.engine import EmoEngine
-from core.profiles import PROFILES, ProfileType
-from core.failures import FailureType
+from emocore.engine import EmoEngine
+from emocore.profiles import PROFILES, ProfileType
+from emocore.failures import FailureType
 
 def test_engine_decay_centralized():
     profile = PROFILES[ProfileType.BALANCED]
@@ -58,7 +58,7 @@ def test_engine_stagnation_observable():
     
     engine = EmoEngine(profile)
     # Prime state to prevent immediate exhaustion
-    from core.state import PressureState
+    from emocore.state import PressureState
     engine.state = PressureState(confidence=0.5)
     
     for i in range(5):
@@ -80,7 +80,7 @@ def test_engine_failure_ordering():
     res = engine.step(1.0, 0.0, 0.0)
     assert res.failure == FailureType.NONE
 def test_engine_does_not_mutate_budget():
-    from core.agent import EmoCoreAgent
+    from emocore.agent import EmoCoreAgent
     agent = EmoCoreAgent()
     res1 = agent.step(0, 0, 0)
     res2 = agent.step(0, 0, 0)

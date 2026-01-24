@@ -1,10 +1,10 @@
 import os 
 import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
-from core.agent import EmoCoreAgent
+from emocore.agent import EmoCoreAgent
 
-from core.profiles import PROFILES, ProfileType, Profile
-from core.failures import FailureType
+from emocore.profiles import PROFILES, ProfileType, Profile
+from emocore.failures import FailureType
 
 def debug_aggressive_vs_balanced():
     print("\n--- Debugging Aggressive vs Balanced ---")

@@ -38,9 +38,9 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src'))
 import subprocess
 
-from core.interface import step, Signals
-from core.agent import EmoCoreAgent
-from core.profiles import Profile
+from emocore.interface import step, Signals
+from emocore.agent import EmoCoreAgent
+from emocore.profiles import Profile
 
 
 # ==========================================

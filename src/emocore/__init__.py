@@ -3,24 +3,24 @@
 EmoCore - Runtime Governance for Autonomous Agents
 
 Public API:
-    from core import EmoCoreAgent, step, Signals
-    from core.profiles import PROFILES, ProfileType
+    from emocore import EmoCoreAgent, step, Signals
+    from emocore.profiles import PROFILES, ProfileType
 
 Usage:
     agent = EmoCoreAgent()
     result = step(agent, Signals(reward=0.5, novelty=0.1, urgency=0.2))
 """
 
-from core.agent import EmoCoreAgent
-from core.interface import step, observe, Signals
-from core.observation import Observation
-from core.adapters import LLMLoopAdapter, ToolCallingAgentAdapter
-from core.guarantees import StepResult, GuaranteeEnforcer
-from core.failures import FailureType
-from core.modes import Mode
-from core.behavior import BehaviorBudget
-from core.state import PressureState
-from core.profiles import Profile, PROFILES, ProfileType
+from emocore.agent import EmoCoreAgent
+from emocore.interface import step, observe, Signals
+from emocore.observation import Observation
+from emocore.adapters import LLMLoopAdapter, ToolCallingAgentAdapter
+from emocore.guarantees import StepResult, GuaranteeEnforcer
+from emocore.failures import FailureType
+from emocore.modes import Mode
+from emocore.behavior import BehaviorBudget
+from emocore.state import PressureState
+from emocore.profiles import Profile, PROFILES, ProfileType
 
 __all__ = [
     # Main API

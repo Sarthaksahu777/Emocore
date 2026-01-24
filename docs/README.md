@@ -31,8 +31,8 @@ graph LR
 ## Quick Start
 
 ```python
-from core.agent import EmoCoreAgent
-from core.profiles import ProfileType
+from emocore.agent import EmoCoreAgent
+from emocore.profiles import ProfileType
 
 # Initialize with a standard governance profile
 agent = EmoCoreAgent(profile_type=ProfileType.BALANCED)

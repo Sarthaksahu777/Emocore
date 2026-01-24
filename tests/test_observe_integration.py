@@ -9,10 +9,10 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-from core.interface import observe
-from core.agent import EmoCoreAgent
-from core.observation import Observation
-from core.modes import Mode
+from emocore.interface import observe
+from emocore.agent import EmoCoreAgent
+from emocore.observation import Observation
+from emocore.modes import Mode
 
 
 class TestObserveAPI:

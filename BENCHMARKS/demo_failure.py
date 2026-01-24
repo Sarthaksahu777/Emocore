@@ -8,12 +8,12 @@ import sys
 import os
 import time
 
-# Ensure we can import core
+# Ensure we can import emocore
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 
-from core.engine import EmoEngine
-from core.profiles import BALANCED
-from core.failures import FailureType
+from emocore.engine import EmoEngine
+from emocore.profiles import BALANCED
+from emocore.failures import FailureType
 
 def run_stagnation_demo():
     print("="*60)

@@ -13,7 +13,7 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from dataclasses import dataclass
 from typing import List
-from core.state import PressureState
+from emocore.state import PressureState
 from collections import deque
 
 @dataclass(frozen=True)

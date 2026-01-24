@@ -7,7 +7,7 @@ from typing import List, Optional
 from collections import deque
 import math
 
-from core.signals import Signals
+from emocore.signals import Signals
 
 
 class ValidationError(Exception):

@@ -9,9 +9,9 @@ import time
 from typing import Optional, Any, Callable
 from contextlib import contextmanager
 
-from core.observation import Observation
-from core.interface import observe, StepResult
-from core.agent import EmoCoreAgent
+from emocore.observation import Observation
+from emocore.interface import observe, StepResult
+from emocore.agent import EmoCoreAgent
 
 
 class LLMLoopAdapter:
@@ -59,7 +59,7 @@ class LLMLoopAdapter:
         
         # If no extractor provided, try to use LLMAgentExtractor with our token limit
         if extractor is None and not hasattr(self.agent, '_extractor'):
-             from core.extractor import LLMAgentExtractor
+             from emocore.extractor import LLMAgentExtractor
              self.agent._extractor = LLMAgentExtractor(token_limit=self.token_limit)
         
         return observe(self.agent, obs, extractor=extractor, validator=validator)
@@ -119,7 +119,7 @@ class ToolCallingAgentAdapter:
             
             # If no extractor exists, default to ToolAgentExtractor
             if not hasattr(self.agent, '_extractor'):
-                from core.extractor import ToolAgentExtractor
+                from emocore.extractor import ToolAgentExtractor
                 self.agent._extractor = ToolAgentExtractor()
                 
             auditor.governance_result = observe(self.agent, obs)

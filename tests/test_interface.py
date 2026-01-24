@@ -1,8 +1,8 @@
 import os
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src'))
-from core.agent import EmoCoreAgent
-from core.interface import step, Signals
+from emocore.agent import EmoCoreAgent
+from emocore.interface import step, Signals
 def test_interface_step_runs():
     agent = EmoCoreAgent()
     

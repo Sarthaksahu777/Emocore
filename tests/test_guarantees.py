@@ -1,11 +1,11 @@
 import os
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src'))
-from core.behavior import BehaviorBudget
-from core.state import PressureState
-from core.failures import FailureType
-from core.modes import Mode
-from core.guarantees import StepResult, GuaranteeEnforcer
+from emocore.behavior import BehaviorBudget
+from emocore.state import PressureState
+from emocore.failures import FailureType
+from emocore.modes import Mode
+from emocore.guarantees import StepResult, GuaranteeEnforcer
 def test_halted_zeroes_budget():
     result = StepResult(
         state=PressureState(),

@@ -3,9 +3,9 @@ import os
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src'))
 
-from core.state import PressureState
-from core.governance import GovernanceEngine
-from core.profiles import Profile
+from emocore.state import PressureState
+from emocore.governance import GovernanceEngine
+from emocore.profiles import Profile
 
 def test_pressure_never_decays():
     p = PressureState(confidence=1.0)

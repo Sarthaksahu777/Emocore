@@ -12,9 +12,9 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-from core.interface import observe
-from core.agent import EmoCoreAgent
-from core.observation import Observation
+from emocore.interface import observe
+from emocore.agent import EmoCoreAgent
+from emocore.observation import Observation
 
 
 def simulate_steady_progress():

@@ -22,7 +22,7 @@ import random
 # Add src to path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-from core import EmoCoreAgent, LLMLoopAdapter
+from emocore import EmoCoreAgent, LLMLoopAdapter
 
 def simulate_llm_task():
     print("=" * 60)
@@ -30,11 +30,11 @@ def simulate_llm_task():
     print("=" * 60)
     
     # 1. Initialize EmoCore with CONSERVATIVE profile for faster feedback
-    from core.profiles import PROFILES, ProfileType
+    from emocore.profiles import PROFILES, ProfileType
     agent = EmoCoreAgent(PROFILES[ProfileType.CONSERVATIVE])
     
     # Custom extractor with tighter limits for the demo
-    from core.extractor import RuleBasedExtractor
+    from emocore.extractor import RuleBasedExtractor
     extractor = RuleBasedExtractor(step_limit=15, stagnation_limit=2)
     
     adapter = LLMLoopAdapter(agent)

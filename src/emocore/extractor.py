@@ -7,8 +7,8 @@ from typing import Dict, List, Optional
 import math
 from collections import deque
 
-from core.signals import Signals
-from core.observation import Observation
+from emocore.signals import Signals
+from emocore.observation import Observation
 
 
 class SignalExtractor(ABC):

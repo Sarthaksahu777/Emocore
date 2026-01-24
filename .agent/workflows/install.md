@@ -33,7 +33,7 @@ python -m pytest tests/ -v
 # Quick Start Example
 
 ```python
-from core import EmoCoreAgent, step, Signals
+from emocore import EmoCoreAgent, step, Signals
 
 # Create agent with default BALANCED profile
 agent = EmoCoreAgent()
@@ -63,5 +63,5 @@ python BENCHMARKS/infinite_loop.py
 
 // turbo
 ```bash
-python -c "from core import EmoCoreAgent, step, Signals; print('EmoCore installed successfully!')"
+python -c "from emocore import EmoCoreAgent, step, Signals; print('EmoCore installed successfully!')"
 ```

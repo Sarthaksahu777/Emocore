@@ -1,9 +1,9 @@
 import os
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src'))
-from core.agent import EmoCoreAgent
-from core.failures import FailureType
-from core.profiles import ProfileType, PROFILES
+from emocore.agent import EmoCoreAgent
+from emocore.failures import FailureType
+from emocore.profiles import ProfileType, PROFILES
 def test_failure_enum_present_on_halt():
     agent = EmoCoreAgent()
     

@@ -13,7 +13,7 @@ import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-from core import EmoCoreAgent, observe, Observation, PROFILES, ProfileType
+from emocore import EmoCoreAgent, observe, Observation, PROFILES, ProfileType
 
 def stress_test_orphaned_signal():
     print("=" * 60)

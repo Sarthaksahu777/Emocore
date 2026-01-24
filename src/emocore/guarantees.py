@@ -19,9 +19,9 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from dataclasses import dataclass
 from typing import Mapping, Optional, Dict
-from core.behavior import BehaviorBudget
-from core.modes import Mode
-from core.failures import FailureType
+from emocore.behavior import BehaviorBudget
+from emocore.modes import Mode
+from emocore.failures import FailureType
 
 
 # Type alias for external pressure snapshot

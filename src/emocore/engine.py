@@ -3,13 +3,13 @@ import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import time
-from core.appraisal import AppraisalEngine
-from core.governance import GovernanceEngine
-from core.state import PressureState
-from core.behavior import BehaviorBudget
-from core.failures import FailureType
-from core.modes import Mode
-from core.result import EngineResult
+from emocore.appraisal import AppraisalEngine
+from emocore.governance import GovernanceEngine
+from emocore.state import PressureState
+from emocore.behavior import BehaviorBudget
+from emocore.failures import FailureType
+from emocore.modes import Mode
+from emocore.result import EngineResult
 
 
 class EmoEngine:

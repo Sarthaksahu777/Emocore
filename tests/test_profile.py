@@ -1,10 +1,10 @@
 import os 
 import sys 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src'))
-from core.agent import EmoCoreAgent
-from core.profiles import Profile, PROFILES, ProfileType
-from core.failures import FailureType
-from core.state import PressureState
+from emocore.agent import EmoCoreAgent
+from emocore.profiles import Profile, PROFILES, ProfileType
+from emocore.failures import FailureType
+from emocore.state import PressureState
 import time
 import dataclasses
 

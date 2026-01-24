@@ -14,10 +14,10 @@ import os
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src'))
 
-from core.agent import EmoCoreAgent
-from core.failures import FailureType
-from core.modes import Mode
-from core.profiles import PROFILES, ProfileType
+from emocore.agent import EmoCoreAgent
+from emocore.failures import FailureType
+from emocore.modes import Mode
+from emocore.profiles import PROFILES, ProfileType
 
 
 # =============================================================================
@@ -70,7 +70,7 @@ def test_runaway_risk_halts_engine():
     with high risk_scale to amplify it into budget.risk.
     """
     import dataclasses
-    from core.state import PressureState
+    from emocore.state import PressureState
     
     # Create profile with low risk threshold and high risk scaling
     overrisk_profile = dataclasses.replace(

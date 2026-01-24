@@ -1,7 +1,7 @@
 import os, sys; sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
-from core.agent import EmoCoreAgent
-from core.profiles import PROFILES, ProfileType
-from core.failures import FailureType
+from emocore.agent import EmoCoreAgent
+from emocore.profiles import PROFILES, ProfileType
+from emocore.failures import FailureType
 
 agent = EmoCoreAgent(PROFILES[ProfileType.BALANCED])
 

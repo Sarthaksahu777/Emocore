@@ -4,17 +4,17 @@ from dataclasses import dataclass, asdict
 import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from core.agent import EmoCoreAgent
-from core.observation import Observation
-from core.extractor import SignalExtractor, RuleBasedExtractor
-from core.validator import SignalValidator
-from core.guarantees import (
+from emocore.agent import EmoCoreAgent
+from emocore.observation import Observation
+from emocore.extractor import SignalExtractor, RuleBasedExtractor
+from emocore.validator import SignalValidator
+from emocore.guarantees import (
     GuaranteeEnforcer,
     StepResult,
 )
-from core.signals import Signals
-from core.failures import FailureType
-from core.modes import Mode
+from emocore.signals import Signals
+from emocore.failures import FailureType
+from emocore.modes import Mode
 
 
 

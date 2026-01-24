@@ -7,7 +7,7 @@ root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 if root_dir not in sys.path:
     sys.path.append(root_dir)
 
-from core.temporal.controls import RetryPolicy, BackoffSchedule, CooldownGate
-from core.temporal.signals import StagnationDetector
+from emocore.temporal.controls import RetryPolicy, BackoffSchedule, CooldownGate
+from emocore.temporal.signals import StagnationDetector
 
 __all__ = ["RetryPolicy", "BackoffSchedule", "CooldownGate", "StagnationDetector"]

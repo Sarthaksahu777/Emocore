@@ -3,9 +3,9 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-from core.observation import Observation
-from core.extractor import RuleBasedExtractor
-from core.signals import Signals
+from emocore.observation import Observation
+from emocore.extractor import RuleBasedExtractor
+from emocore.signals import Signals
 
 class TestRuleBasedExtractor:
     
@@ -154,7 +154,7 @@ class TestRuleBasedExtractor:
 
     def test_llm_extractor_tokens(self):
         """Test token budget urgency in LLMAgentExtractor."""
-        from core.extractor import LLMAgentExtractor
+        from emocore.extractor import LLMAgentExtractor
         extractor = LLMAgentExtractor(token_limit=1000)
         
         obs = Observation(
@@ -173,7 +173,7 @@ class TestRuleBasedExtractor:
 
     def test_llm_extractor_reasoning_trust(self):
         """Test reasoning theater trust decay."""
-        from core.extractor import LLMAgentExtractor
+        from emocore.extractor import LLMAgentExtractor
         extractor = LLMAgentExtractor()
         
         # High reasoning, zero env delta
@@ -193,7 +193,7 @@ class TestRuleBasedExtractor:
 
     def test_tool_extractor_bonus(self):
         """Test tangible environment change bonus in ToolAgentExtractor."""
-        from core.extractor import ToolAgentExtractor
+        from emocore.extractor import ToolAgentExtractor
         extractor = ToolAgentExtractor()
         
         obs = Observation(

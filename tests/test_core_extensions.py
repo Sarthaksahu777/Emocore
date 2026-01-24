@@ -3,9 +3,9 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-from core.agent import EmoCoreAgent
-from core.modes import Mode
-from core.failures import FailureType
+from emocore.agent import EmoCoreAgent
+from emocore.modes import Mode
+from emocore.failures import FailureType
 
 
 class TestResetFunctionality:

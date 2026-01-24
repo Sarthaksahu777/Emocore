@@ -2,7 +2,7 @@ import time
 import os 
 import sys 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src'))
-from core.agent import EmoCoreAgent
+from emocore.agent import EmoCoreAgent
 def test_time_decay_reduces_budget():
     agent = EmoCoreAgent()
     
@@ -65,7 +65,7 @@ def test_time_decay_reduces_budget():
     # agent.engine.governance.compute(agent.engine.state, dt=0.0).
     
     # Force state to valid nonzero
-    from core.state import PressureState
+    from emocore.state import PressureState
     agent.engine.state = PressureState(confidence=1.0, arousal=1.0)
     
     # Step with dt > 0 (via sleep + step)
@@ -84,7 +84,7 @@ def test_recovery_happens_over_time():
     New invariant: Recovery occurs ONLY when mode == RECOVERING.
     To trigger RECOVERING, effort or persistence must drop below 0.3.
     """
-    from core.modes import Mode
+    from emocore.modes import Mode
     
     core = EmoCoreAgent()
     

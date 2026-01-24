@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 # Add src to path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-from core import EmoCoreAgent, observe, Observation, PROFILES
+from emocore import EmoCoreAgent, observe, Observation, PROFILES
 
 def run_visualizer_demo():
     print("=" * 60)
@@ -24,7 +24,7 @@ def run_visualizer_demo():
     print("=" * 60)
     
     # 1. Setup Simulation
-    from core.profiles import ProfileType
+    from emocore.profiles import ProfileType
     agent = EmoCoreAgent(PROFILES[ProfileType.BALANCED])
     steps = 40
     

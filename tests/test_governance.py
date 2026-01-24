@@ -1,9 +1,9 @@
 import pytest
 import numpy as np
 import os; import sys; sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src'))
-from core.governance import GovernanceEngine
-from core.state import PressureState
-from core.behavior import BehaviorBudget
+from emocore.governance import GovernanceEngine
+from emocore.state import PressureState
+from emocore.behavior import BehaviorBudget
 
 def test_governance_pure_function():
     gov = GovernanceEngine()

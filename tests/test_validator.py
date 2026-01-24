@@ -3,8 +3,8 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-from core.validator import SignalValidator, ValidationError
-from core.signals import Signals
+from emocore.validator import SignalValidator, ValidationError
+from emocore.signals import Signals
 
 class TestSignalValidator:
     

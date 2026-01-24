@@ -5,9 +5,9 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from dataclasses import dataclass, field
 from typing import Optional, List, Dict
 
-from core.behavior import BehaviorBudget
-from core.failures import FailureType
-from core.modes import Mode
+from emocore.behavior import BehaviorBudget
+from emocore.failures import FailureType
+from emocore.modes import Mode
 
 
 @dataclass(frozen=True)

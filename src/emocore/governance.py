@@ -25,8 +25,8 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 import numpy as np
 from dataclasses import dataclass
 from typing import Optional
-from core.behavior import BehaviorBudget
-from core.state import PressureState
+from emocore.behavior import BehaviorBudget
+from emocore.state import PressureState
 
 
 class GovernanceEngine:

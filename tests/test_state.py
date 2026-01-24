@@ -1,6 +1,6 @@
 import pytest
 import os; import sys; sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src'))
-from core.state import PressureState
+from emocore.state import PressureState
 
 def test_state_immutable_integration():
     initial = PressureState()
