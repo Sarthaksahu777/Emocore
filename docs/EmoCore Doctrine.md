@@ -304,7 +304,7 @@ The correct phrasing is always:
 
 If you forget this distinction, you will slide from Level 4 back to Level 2 without noticing.
 Violations and Regression Events
-If a future version:
+If a Implemented version:
 Adds optimization parameters
 Removes unreachability guarantees
 Softens a hard boundary
@@ -336,3 +336,6 @@ Not because it's exciting.
 They adopt boundaries after impact, not before ambition.
 Your job is not to convince them early.
 Your job is to still be right when they arrive late.
+
+---
+*Last Updated: Dec 15, 2025*

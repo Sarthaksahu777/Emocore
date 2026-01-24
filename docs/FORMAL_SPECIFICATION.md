@@ -1,4 +1,4 @@
-# EmoCore — Formal Runtime State Machine (v0.5)
+# EmoCore — Formal Runtime State Machine (v0.7)
 
 This document provides the formal specification for the EmoCore state machine, defining the states, variables, signals, and deterministic transition rules that govern agent behavior at runtime.
 
@@ -122,3 +122,6 @@ Where:
 ---
 
 > "This is a runtime governor, not a policy — it enforces bounded agency even if the model misbehaves."
+
+---
+*Last Updated: Dec 15, 2025*

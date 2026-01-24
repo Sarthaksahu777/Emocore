@@ -11,20 +11,20 @@ The focus of v0.7 is **accessibility and integration**. We are moving from a "go
 The Extraction Layer is an external wrapper that transforms raw agent telemetry into canonical EmoCore signals.
 
 *   **Reward Extraction**:
-    *   [ ] Detect task success/failure via explicit flags.
-    *   [ ] Detect retries (identical actions or repeated tool calls).
+    *   [x] Detect task success/failure via explicit flags.
+    *   [x] Detect retries (identical actions or repeated tool calls).
     *   *Mapping:* Success → `+reward`; Failure/Retry → `-reward`.
 *   **Novelty Extraction**:
-    *   [ ] State change detection (hash/snapshot diffs).
-    *   [ ] Tool usage divergence (new vs. repeated tools).
+    *   [x] State change detection (hash/snapshot diffs).
+    *   [x] Tool usage divergence (new vs. repeated tools).
     *   *Mapping:* New state/tool → `+novelty`.
 *   **Urgency Extraction**:
-    *   [ ] Wall-clock elapsed time integration.
-    *   [ ] Token/Step budget depletion tracking.
+    *   [x] Wall-clock elapsed time integration.
+    *   [x] Token/Step budget depletion tracking.
     *   *Mapping:* Proximity to limit → `+urgency`.
 *   **Difficulty Inference (NEW)**:
-    *   [ ] Stagnation streak detection (no state change over $N$ steps).
-    *   [ ] Tool error accumulation counter.
+    *   [x] Stagnation streak detection (no state change over $N$ steps).
+    *   [x] Tool error accumulation counter.
     *   *Mapping:* High friction → `+difficulty` (requires core extension).
 
 ---
@@ -44,9 +44,9 @@ To enable the "Plug-and-Play" vision, minor non-breaking changes are required in
 *   **LLM Loop Adapter**: A drop-in wrapper for standard LLM retry/generation loops that handles state and signals automatically.
 *   **Tool-Calling Agent Adapter**: A wrapper that captures tool execution results, failures, and retries to map them directly to EmoCore signals.
 *   **Examples Gallery (`/examples`)**:
-    *   [ ] **The Infinite Loop Fix**: Deterministic halt of a repeating LLM agent.
-    *   [ ] **The Retry Storm**: Halting an agent that keeps hitting the same tool error.
-    *   [ ] **Visualizer**: Multi-step task trace with budget/pressure graphs.
+    *   [x] **The Infinite Loop Fix**: Deterministic halt of a repeating LLM agent.
+    *   [x] **The Retry Storm**: Halting an agent that keeps hitting the same tool error.
+    *   [x] **Visualizer**: Multi-step task trace with budget/pressure graphs.
 
 ---
 
@@ -67,3 +67,6 @@ v0.7 is considered **Complete** when:
 ---
 
 > **North Star:** EmoCore exists to enforce bounded execution, not better decisions.
+
+---
+*Last Updated: Dec 15, 2025*

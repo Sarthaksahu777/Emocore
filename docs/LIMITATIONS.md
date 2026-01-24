@@ -15,7 +15,10 @@ EmoCore does not possess reasoning capabilities. It cannot synthesize new strate
 EmoCore is a mechanistic regulator. It does not encode moral values, ethics, or alignment beyond the boundaries defined in its behavior profile.
 
 ## 5. Deployment Scope
-The current version (v0.5) is designed for single-agent governance. It does not include primitives for multi-agent coordination or distributed governance.
+The current version (v0.7) is designed for single-agent governance. It does not include primitives for multi-agent coordination or distributed governance.
 
 ## Philosophical Rationale
 These limitations are intentional design boundaries. By focusing exclusively on **agency regulation**, EmoCore remains a predictable, auditable, and easily integrated infrastructure component. It makes systems safer and easier to debug without increasing the complexity of their intelligence layer.
+
+---
+*Last Updated: Dec 15, 2025*

@@ -49,3 +49,6 @@ This document provides definitive meanings for core concepts within the EmoCore 
 ### Recovery
 **Definition**: A controlled, pre-failure process permitted only in `RECOVERING` mode.
 - **Constraints**: Must not increase risk; must be bounded by pre-failure stable budget levels.
+
+---
+*Last Updated: Dec 15, 2025*

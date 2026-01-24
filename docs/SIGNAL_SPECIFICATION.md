@@ -1,4 +1,4 @@
-# EmoCore — Signal Specification (v0.x)
+# EmoCore — Signal Specification (v0.7)
 
 > **One-Line Contract:** EmoCore converts observable agent behavior into bounded, temporal control signals and deterministically halts execution when continued action is no longer justified.
 
@@ -37,7 +37,7 @@ EmoCore is **pessimistic by design**. Users must expect the following behaviors:
 6. **EmoCore is pessimistic under uncertainty** and defaults toward halting unless evidence accumulates
 
 > [!CAUTION]
-> Principle 6 is load-bearing. If you remove this, future contributors will "optimize" EmoCore into an unsafe system.
+> Principle 6 is load-bearing. If you remove this, Implemented contributors will "optimize" EmoCore into an unsafe system.
 
 ---
 
@@ -54,7 +54,7 @@ EmoCore provides **end-to-end signal extraction and governance**, not just gover
 │  │             Extractor Layer                         │   │
 │  │  ┌─────────────┐ ┌─────────────┐ ┌──────────────┐   │   │
 │  │  │ Rule-Based  │ │  LLM Agent  │ │   Custom     │   │   │
-│  │  │ (default)   │ │  (future)   │ │ (user hook)  │   │   │
+│  │  │ (default)   │ │  (Implemented)   │ │ (user hook)  │   │   │
 │  │  └─────────────┘ └─────────────┘ └──────────────┘   │   │
 │  └────────────────────────┬────────────────────────────┘   │
 │                           ▼                                │
@@ -130,8 +130,8 @@ IF state_hash in recent_hashes[-N:]:
 | Agent Type | Extractor | Status |
 |------------|-----------|--------|
 | Generic | `RuleBasedExtractor` | ✅ Default |
-| LLM Agent | `LLMAgentExtractor` | 🔜 Future |
-| Tool Agent | `ToolAgentExtractor` | 🔜 Future |
+| LLM Agent | `LLMAgentExtractor` | 🔜 Implemented |
+| Tool Agent | `ToolAgentExtractor` | 🔜 Implemented |
 | Custom | User subclasses `SignalExtractor` | ✅ Available |
 
 ### Layer Responsibilities
@@ -168,7 +168,7 @@ EmoCore operates on exactly four signals:
 > **Trust is a functional multiplier.** All signals (except Difficulty) are gated by `Trust`. If Trust is 0.5, a Reward of 1.0 becomes 0.5. Difficulty is never gated as it acts as a safety brake.
 
 > [!IMPORTANT]
-> No other signals exist in v0.x.
+> No other signals exist in v0.7.
 
 ---
 
@@ -707,3 +707,6 @@ class MyCustomExtractor(SignalExtractor):
 > **Pure chat LLMs** (no tools) will trigger faster halts because `env_state_delta = 0`. This is intentional — text generation without external action is not observable progress.
 
 
+
+---
+*Last Updated: Dec 15, 2025*

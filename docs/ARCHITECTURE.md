@@ -32,3 +32,6 @@ The `HALTED` state is a terminal absorber. Once the `Safety Guarantees` layer de
 
 ## Design Philosophy: Fail-Closed
 In any scenario where governance invariants (stability, safety, progress) cannot be maintained, EmoCore defaults to explicit termination. This prevents the "silent failure" or "infinite loop" behaviors common in autonomous systems, ensuring the agent fails-closed rather than failing-soft into an undefined state.
+
+---
+*Last Updated: Dec 15, 2025*

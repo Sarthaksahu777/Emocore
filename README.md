@@ -291,15 +291,14 @@ These are execution guarantees, not performance claims.
 
 ## Roadmap
 
-- **v1.0 (Planned)**: Stable install + signal extraction definitions.
-- **v1.1**: Adapters for agent frameworks.
-- **v2.x**: Adaptive profiles (optional, non-learning).
+- **v0.7 (Current)**: Stable release with automated signal extraction and framework adapters. (Released Dec 2025)
+- **v1.0 (Planned)**: Native framework integrations and formal verification.
 
 ---
 
 ## Documentation Suite
 
-For deep details, see the `docs/` directory:
+For deep details, see the `docs/` directory. All documents were updated to reflect v0.7 stable semantics (Dec 2025):
 
 - [**Technical Definition**](docs/DEFINITION.md) — Core properties and fundamental logic.
 - [**Architecture & Lifecycle**](docs/ARCHITECTURE.md) — Component responsibilities and terminality invariants.
@@ -311,3 +310,6 @@ For deep details, see the `docs/` directory:
 ## One-Line Summary
 
 > EmoCore enforces bounded agency by guaranteeing finite-time halting for autonomous systems — regardless of how the model behaves.
+
+---
+*Stable Release v0.7.0 | Verified Dec 15, 2025*

@@ -16,3 +16,6 @@ EmoCore is a **runtime behavioral governance layer** focused on:
 - Translating pressure into bounded, deterministic behavioral budgets.
 - Enforcing hard failure conditions when safety or progress envelopes are breached.
 - Providing a stable, fail-closed foundation for autonomous systems.
+
+---
+*Last Updated: Dec 15, 2025*

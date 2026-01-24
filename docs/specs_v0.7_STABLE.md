@@ -1,15 +1,15 @@
-# EmoCore v0.5 — Base Prototype Specification
+# EmoCore v0.7 — Stable Release Specification
 
-This document defines the technical requirements and behavioral guarantees for the EmoCore v0.5 runtime governance layer. 
+This document defines the technical requirements and behavioral guarantees for the EmoCore v0.7 runtime governance layer. 
 
 ## 1. Scope and Objective
-EmoCore v0.5 establishes a stable foundation for **bounded agency**. It regulates agent behavioral intensity independent of task-specific logic. 
+EmoCore v0.7 establishes a stable foundation for **bounded agency**. It regulates agent behavioral intensity independent of task-specific logic. 
 
 **Exclusions**: This version does not include learning, online optimization, or dynamic policy adjustment.
 
 ## 2. Core Guarantees (Hard Invariants)
 
-The following invariants are enforced by the v0.5 runtime:
+The following invariants are enforced by the v0.7 runtime:
 
 - **Bounded Budgets**: All behavioral budgets are strictly constrained.
   - $\text{effort, risk, exploration, persistence} \in [0, 1]$
@@ -46,8 +46,11 @@ Failure types are ordered and mutually exclusive. The first condition met trigge
 | **EXTERNAL** | Session-level termination (e.g., max_steps). |
 
 ## 5. Version Boundary
-EmoCore v0.5 is considered functionally complete when:
+EmoCore v0.7 is considered functionally complete when:
 1. All core invariants are verified through property-based testing.
 2. The `HALTED` state is confirmed as a terminal absorber.
 3. Behavior profiles demonstrate expected divergence in benchmark tests.
-4. No additional mechanics are introduced that violate v0.5 stability.
+4. No additional mechanics are introduced that violate v0.7 stability.
+
+---
+*Last Updated: Dec 15, 2025*

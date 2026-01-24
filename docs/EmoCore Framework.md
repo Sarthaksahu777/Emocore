@@ -218,7 +218,7 @@ graceful shutdown
 recoverable operation
 
 
-9. Limitations and Future Work
+9. Limitations and Implemented Work
 
 
 No learning of profiles (yet)
@@ -234,3 +234,6 @@ We argue that internal governance is a missing primitive in autonomous agent des
 As autonomy scales, governance must move from external oversight to internal regulation.
 > The hard problem is not making agents smarter —
 it is making them know when to stop.
+
+---
+*Last Updated: Dec 15, 2025*

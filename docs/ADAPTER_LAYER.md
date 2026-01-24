@@ -100,3 +100,6 @@ Because EmoCore is **pessimistic** and **frustration-dominant**.
 > If evidence is incomplete or incorrect, EmoCore degrades conservatively by halting earlier.
 
 This prevents scope explosion and ensures safety is preserved even with imperfect adapters.
+
+---
+*Last Updated: Dec 15, 2025*

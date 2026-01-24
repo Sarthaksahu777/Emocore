@@ -13,7 +13,7 @@ This document specifies the conditions under which EmoCore enforces agent termin
 Triggered when high-load urgency signals are sustained without sufficient reward or novelty accumulation to offset effort depletion.
 
 ### Technical Semantics
-In EmoCore v0.5, effort and persistence budgets decay monotonically under high pressure. If the effort budget falls below the `exhaustion_threshold` (default 0.1), the system transitions to `Mode.HALTED`.
+In EmoCore v0.7, effort and persistence budgets decay monotonically under high pressure. If the effort budget falls below the `exhaustion_threshold` (default 0.1), the system transitions to `Mode.HALTED`.
 
 ### Operational Flow
 1. **Effort Decay**: Progressive reduction in the effort budget.
@@ -74,3 +74,6 @@ EmoCore prefers **explicit, typed failure** over **ambiguous, degraded persisten
 - A hard safety or progress invariant was breached.
 - Agency limits were exceeded for the current strategy.
 - Continued execution was determined to be unsafe or unproductive by the governance layer.
+
+---
+*Last Updated: Dec 15, 2025*
