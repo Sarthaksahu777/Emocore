@@ -1,4 +1,4 @@
-# core/modes.py
+# emocore/modes.py
 """
 EmoCore operational modes.
 

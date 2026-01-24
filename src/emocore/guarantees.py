@@ -1,4 +1,4 @@
-# core/guarantees.py
+# emocore/guarantees.py
 """
 Guarantee enforcement layer for EmoCore.
 

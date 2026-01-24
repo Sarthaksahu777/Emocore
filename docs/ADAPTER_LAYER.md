@@ -83,7 +83,7 @@ Because EmoCore is **pessimistic** and **frustration-dominant**.
 
 **What EmoCore Provides:**
 1. The `Observation` struct (the Evidence ABI)
-2. One default `RuleBasedEvidenceAdapter` (for quick start)
+2. One default `RuleBasedExtractor` (for quick start)
 3. Reference examples (LLM, Tool, etc.)
 
 **What EmoCore Does NOT Provide:**

@@ -1,4 +1,4 @@
-# core/governance.py
+# emocore/governance.py
 """
 GovernanceEngine: Translates pressure state into behavioral permission.
 

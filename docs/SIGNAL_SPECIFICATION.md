@@ -668,7 +668,7 @@ env_state_delta = stdout_changed or files_modified
 Subclass `SignalExtractor` and implement:
 
 ```python
-from emocore.extractors import SignalExtractor, Observation, Signals
+from emocore.extractor import SignalExtractor, Observation, Signals
 
 class MyCustomExtractor(SignalExtractor):
     def extract(self, observation: Observation) -> Signals:

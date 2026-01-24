@@ -1,4 +1,4 @@
-# core/adapters.py
+# emocore/adapters.py
 """
 Integration Surface: Reusable adapters for typical agent loops.
 These wrappers simplify the 'observe()' pattern by handling timing and

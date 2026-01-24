@@ -1,4 +1,4 @@
-# core/failures.py
+# emocore/failures.py
 """
 Failure types for EmoCore.
 

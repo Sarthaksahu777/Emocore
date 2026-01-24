@@ -1,4 +1,4 @@
-# core/escalation.py
+# emocore/escalation.py
 """
 NOTE:
 This component is downstream of EmoCore.

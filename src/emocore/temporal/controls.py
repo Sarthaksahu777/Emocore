@@ -1,4 +1,4 @@
-# core/temporal/controls.py
+# emocore/temporal/controls.py
 """
 Control primitives.
 

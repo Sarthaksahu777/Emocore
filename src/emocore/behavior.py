@@ -1,4 +1,4 @@
-# core/behavior.py
+# emocore/behavior.py
 """
 Behavior budget: EmoCore's output representing permission to act.
 

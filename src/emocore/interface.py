@@ -1,4 +1,4 @@
-# core/interface.py
+# emocore/interface.py
 
 from dataclasses import dataclass, asdict
 import os

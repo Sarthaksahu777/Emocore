@@ -1,4 +1,4 @@
-# core/policy.py
+# emocore/policy.py
 """
 NOTE:
 This component is downstream of EmoCore.

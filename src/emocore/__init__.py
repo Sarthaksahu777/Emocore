@@ -1,4 +1,4 @@
-# core/__init__.py
+# emocore/__init__.py
 """
 EmoCore - Runtime Governance for Autonomous Agents
 

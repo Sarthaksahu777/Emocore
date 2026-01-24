@@ -1,4 +1,4 @@
-# core/appraisal.py
+# emocore/appraisal.py
 """
 AppraisalEngine: Converts environmental signals into pressure deltas.
 

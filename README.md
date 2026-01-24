@@ -185,10 +185,17 @@ cd Emocore
 pip install -e .
 ```
 
-> [!IMPORTANT]
-> **Implementation Note**: The PyPI distribution name is `emocore`, but the implementation package is named `core`.
-> - **Install**: `pip install emocore` (or `pip install -e .` locally)
-> - **Import**: `from emocore import EmoCoreAgent`, `from emocore import step`, etc.
+To use EmoCore in your project:
+
+```bash
+pip install emocore
+```
+
+Then import it in your code:
+
+```python
+from emocore import EmoCoreAgent, step, Signals
+```
 
 ### Option 2: Configuration
 You can select different governance profiles at initialization:

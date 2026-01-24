@@ -1,4 +1,4 @@
-# core/temporal/signals.py
+# emocore/temporal/signals.py
 """
 Temporal signal processors.
 
