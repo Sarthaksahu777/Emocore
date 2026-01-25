@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "emocore"
-version = "0.5.3"
+version = "0.7.0"
 description = "A runtime governance layer that enforces hard behavioral bounds in autonomous agents."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -43,6 +43,13 @@ classifiers = [
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0", "pytest-cov"]
+examples = [
+    "autogen",
+    "crewai",
+    "langchain",
+    "langchain-openai",
+    "openai"
+]
 
 # Tell setuptools where to find packages; this repo uses a "src/" layout.
 [tool.setuptools.packages.find]

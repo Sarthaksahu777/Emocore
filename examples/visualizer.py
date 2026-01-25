@@ -14,7 +14,8 @@ import os
 import matplotlib.pyplot as plt
 
 # Add src to path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+# Add src to path
+# sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
 from emocore import EmoCoreAgent, observe, Observation, PROFILES
 
