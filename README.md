@@ -317,12 +317,12 @@ The system halts deterministically.
 
 EmoCore is rigorously tested for production reliability.
 
-- ✅ **Unit Tests**: 100% core logic coverage (61 tests passing)
+- ✅ **Unit Tests**: High core logic coverage (~60 tests)
 - ✅ **Integration Tests**: Verified with LangChain, AutoGen, CrewAI, OpenAI SDK
-- ✅ **Benchmarks**: <10ms overhead per governance step
-- ✅ **LLM Testing**: Validated with GPT-4, Claude 3.5 Sonnet, Llama 3, Gemma 2
+- ✅ **Benchmarks**: Low overhead per governance step
+- ✅ **LLM Testing**: Validated with local models (Gemma, Qwen)
 
-[![Tests](https://img.shields.io/badge/tests-61%20passing-brightgreen)](https://github.com/Sarthaksahu777/Emocore/actions)
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen)](https://github.com/Sarthaksahu777/Emocore/actions)
 
 ---
 
