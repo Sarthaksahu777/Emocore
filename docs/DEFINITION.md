@@ -34,4 +34,4 @@ EmoCore operates independently of:
 As a **first-class runtime governor**, EmoCore prevents runaway behaviors and ensures agents operate within defined technical safety and progress envelopes, making autonomous systems predictable and reliable.
 
 ---
-*Last Updated: Dec 15, 2025*
+*Last Updated: Jan 25, 2026*

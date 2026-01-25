@@ -21,4 +21,4 @@ The current version (v0.7) is designed for single-agent governance. It does not 
 These limitations are intentional design boundaries. By focusing exclusively on **agency regulation**, EmoCore remains a predictable, auditable, and easily integrated infrastructure component. It makes systems safer and easier to debug without increasing the complexity of their intelligence layer.
 
 ---
-*Last Updated: Dec 15, 2025*
+*Last Updated: Jan 25, 2026*

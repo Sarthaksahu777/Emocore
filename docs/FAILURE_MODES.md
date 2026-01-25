@@ -76,4 +76,4 @@ EmoCore prefers **explicit, typed failure** over **ambiguous, degraded persisten
 - Continued execution was determined to be unsafe or unproductive by the governance layer.
 
 ---
-*Last Updated: Dec 15, 2025*
+*Last Updated: Jan 25, 2026*

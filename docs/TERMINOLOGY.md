@@ -51,4 +51,4 @@ This document provides definitive meanings for core concepts within the EmoCore 
 - **Constraints**: Must not increase risk; must be bounded by pre-failure stable budget levels.
 
 ---
-*Last Updated: Dec 15, 2025*
+*Last Updated: Jan 25, 2026*

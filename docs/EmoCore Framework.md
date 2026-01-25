@@ -236,4 +236,4 @@ As autonomy scales, governance must move from external oversight to internal reg
 it is making them know when to stop.
 
 ---
-*Last Updated: Dec 15, 2025*
+*Last Updated: Jan 25, 2026*

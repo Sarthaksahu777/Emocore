@@ -316,4 +316,4 @@ For deep details, see the `docs/` directory. All documents were updated to refle
 > EmoCore enforces bounded agency by guaranteeing finite-time halting for autonomous systems — regardless of how the model behaves.
 
 ---
-*Stable Release v0.7.0 | Verified Dec 15, 2025*
+*Stable Release v0.7.0 | Verified Jan 25, 2026*

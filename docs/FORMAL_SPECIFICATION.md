@@ -124,4 +124,4 @@ Where:
 > "This is a runtime governor, not a policy — it enforces bounded agency even if the model misbehaves."
 
 ---
-*Last Updated: Dec 15, 2025*
+*Last Updated: Jan 25, 2026*

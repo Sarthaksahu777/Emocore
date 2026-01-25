@@ -53,4 +53,4 @@ EmoCore v0.7 is considered functionally complete when:
 4. No additional mechanics are introduced that violate v0.7 stability.
 
 ---
-*Last Updated: Dec 15, 2025*
+*Last Updated: Jan 25, 2026*

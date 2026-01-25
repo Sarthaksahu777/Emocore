@@ -25,4 +25,4 @@ In non-stationary or adversarial environments, safety and progress invariants ca
 EmoCore transforms autonomous agents from "experimental systems" into "reliable primitives" by providing **bounded agency** and **explicit failure semantics**. It acting as a safety-critical regulator, ensuring the system remains within its defined behavioral envelope regardless of the complexity of the intelligence layer.
 
 ---
-*Last Updated: Dec 15, 2025*
+*Last Updated: Jan 25, 2026*

@@ -338,4 +338,4 @@ Your job is not to convince them early.
 Your job is to still be right when they arrive late.
 
 ---
-*Last Updated: Dec 15, 2025*
+*Last Updated: Jan 25, 2026*

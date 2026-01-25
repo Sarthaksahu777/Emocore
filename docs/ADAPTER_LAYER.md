@@ -102,4 +102,4 @@ Because EmoCore is **pessimistic** and **frustration-dominant**.
 This prevents scope explosion and ensures safety is preserved even with imperfect adapters.
 
 ---
-*Last Updated: Dec 15, 2025*
+*Last Updated: Jan 25, 2026*

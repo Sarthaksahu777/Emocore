@@ -65,4 +65,4 @@ while True:
 > EmoCore v0.7 is a **runtime governor**. It does not perform learning or reasoning. It enforces the behavioral boundaries within which reasoning occurs.
 
 ---
-*Last Updated: Dec 15, 2025*
+*Last Updated: Jan 25, 2026*
