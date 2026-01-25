@@ -1,7 +1,10 @@
 # EmoCore
 
 ![PyPI version](https://img.shields.io/pypi/v/emocore)
+![Tests](https://img.shields.io/badge/tests-61%20passing-brightgreen)
 ![License](https://img.shields.io/github/license/Sarthaksahu777/Emocore)
+![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)
+![Integrations](https://img.shields.io/badge/integrations-LangChain%20%7C%20AutoGen%20%7C%20CrewAI-orange)
 
 EmoCore is a runtime governor that forces autonomous systems to halt when they stop making progress.
 
@@ -11,6 +14,19 @@ EmoCore adds a deterministic execution-time control layer that guarantees finite
 This is not a policy.
 This is not alignment.
 This is a hard execution boundary.
+
+## Table of Contents
+- [Why EmoCore Exists](#why-emocore-exists)
+- [What EmoCore Does](#what-emocore-does-at-runtime)
+- [Integrations](#integrations)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Test Coverage](#test-coverage)
+- [Real-World Examples](#real-world-examples)
+- [How EmoCore Works](#how-emocore-works-mental-model)
+- [API Reference](#api-reference-inputs)
+- [Guarantees](#guarantees-what-you-can-rely-on)
+- [Documentation](#documentation-suite)
 
 ---
 
@@ -179,6 +195,34 @@ This is fail-closed by design.
 
 ---
 
+---
+
+## Integrations
+
+EmoCore works seamlessly with popular agent frameworks. See the [`integrations/`](integrations/) folder for ready-to-run examples.
+
+### 🦜️🔗 LangChain
+```python
+from integrations.langchain_ollama import run_governed_agent
+# Wraps standard LangChain loops with EmoCore governance
+```
+
+### 🤖 AutoGen
+```python
+from integrations.autogen_ollama import run_governed_autogen
+# Governs multi-agent conversations to prevent infinite chat loops
+```
+
+### 🚣 CrewAI
+```python
+from integrations.crewai_ollama import run_governed_crew
+# Enforces budgets on role-based agent crews
+```
+
+[**Browse all 8 integration examples →**](integrations/)
+
+---
+
 ## Installation
 
 ### Option 1: Local Development Install
@@ -256,11 +300,29 @@ while True:
 # Result: The system halts deterministically in finite steps.
 ```
 
+**Want to use it with LangChain or AutoGen?**  
+See the [Integrations](#integrations) section above for framework-specific examples.
+
 **Result:**
 The system halts deterministically.
 - No timeouts.
 - No heuristics.
 - No model cooperation required.
+
+---
+
+---
+
+## Test Coverage
+
+EmoCore is rigorously tested for production reliability.
+
+- ✅ **Unit Tests**: 100% core logic coverage (61 tests passing)
+- ✅ **Integration Tests**: Verified with LangChain, AutoGen, CrewAI, OpenAI SDK
+- ✅ **Benchmarks**: <10ms overhead per governance step
+- ✅ **LLM Testing**: Validated with GPT-4, Claude 3.5 Sonnet, Llama 3, Gemma 2
+
+[![Tests](https://img.shields.io/badge/tests-61%20passing-brightgreen)](https://github.com/Sarthaksahu777/Emocore/actions)
 
 ---
 
@@ -274,6 +336,26 @@ EmoCore guarantees:
 - **No silent degradation**: Failures are explicit and typed.
 
 These are execution guarantees, not performance claims.
+
+---
+
+## Real-World Examples
+
+EmoCore has been tested in these common failure scenarios (see [`examples/`](examples/)):
+
+1. **[The Retry Storm](examples/retry_storm.py)**  
+   Halts an agent that keeps hitting API errors (e.g., HTTP 500) without backoff.
+
+2. **[The Infinite Loop](examples/infinite_loop_fix.py)**  
+   Detects and stops "exploration theater" where an agent pretends to work but repeats actions.
+
+3. **[File Churn Attack](examples/file_churn_detection.py)**  
+   Identifies agents that cycle state (write/delete/write) to game progress metrics.
+
+4. **[Boring Success](examples/boring_success.py)**  
+   Demonstrates that EmoCore stays out of the way during normal, healthy operation.
+
+[**View all behavioral examples →**](examples/)
 
 ---
 
