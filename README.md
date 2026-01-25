@@ -377,14 +377,14 @@ EmoCore has been tested in these common failure scenarios (see [`examples/`](exa
 
 ## Roadmap
 
-- **v0.7 (Current)**: Stable release with automated signal extraction and framework adapters. (Released Dec 2025)
+- **v0.7 (Current)**: Stable release with automated signal extraction and framework adapters. (Released Jan 2026)
 - **v1.0 (Planned)**: Native framework integrations and formal verification.
 
 ---
 
 ## Documentation Suite
 
-For deep details, see the `docs/` directory. All documents were updated to reflect v0.7 stable semantics (Dec 2025):
+For deep details, see the `docs/` directory. All documents were updated to reflect v0.7 stable semantics (Jan 2026):
 
 - [**Technical Definition**](docs/DEFINITION.md) — Core properties and fundamental logic.
 - [**Architecture & Lifecycle**](docs/ARCHITECTURE.md) — Component responsibilities and terminality invariants.
