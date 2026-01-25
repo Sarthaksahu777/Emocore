@@ -144,6 +144,8 @@ Difficulty    ↑↑                  Risk          │   │
 
 > **Key asymmetry**: Pressure can grow forever. Permission cannot.
 
+![Pressure vs Budget Dynamics](docs/pressure_budget_dynamics.png)
+
 Under sustained stress, permission always collapses.
 
 ### 3. Dynamic Recovery
@@ -172,6 +174,8 @@ EmoCore checks failure conditions every step, in priority order (defined in `eng
 > **When EmoCore halts, the system is done unless externally reset.**
 
 This is fail-closed by design.
+
+![Failure Mode Progression](docs/failure_progression.png)
 
 ---
 
